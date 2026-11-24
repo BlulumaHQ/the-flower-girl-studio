@@ -38,7 +38,7 @@ body { background: var(--background); color: var(--foreground); font-family: var
 .it { font-family: var(--font-serif); font-style: italic; font-weight: 500; color: var(--accent); }
 .wk { filter: saturate(.85) contrast(.97); }
 .ph { filter: saturate(.68) contrast(.94) brightness(1.03); }
-.wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px,5vw,64px); }
+.wrap { max-width: 1280px; margin: 0 auto; padding-left: clamp(20px,5vw,64px); padding-right: clamp(20px,5vw,64px); }
 .sec { padding: clamp(72px,10vw,118px) 0; }
 .alt { background: var(--alt); }
 .eyebrow { font-size: 11px; letter-spacing: .34em; text-transform: uppercase; color: var(--muted2); display: inline-flex; align-items: center; gap: 12px; }
