@@ -21,8 +21,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const SB = "https://uzdjwpkgldzhnoxjeyrw.supabase.co/storage/v1/object/public/content-images/b237218e-d944-4af0-87b2-09379102e53e/portfolio";
-const BL = "https://bluluma.com/images/branding";
 
 function Logo({ color = "var(--ink)", flowerColor = "var(--lav)", className = "", style }: { color?: string; flowerColor?: string; className?: string; style?: React.CSSProperties }) {
   const lines = Array.from({ length: 32 }, (_, i) => {
@@ -65,13 +63,13 @@ function BrowserFrame({ src, alt }: { src: string; alt: string }) {
 const nav = [["01", "Studio", "#studio"], ["02", "Work", "#work"], ["03", "Services", "#services"], ["04", "Digital", "#digital"], ["05", "Contact", "#contact"]];
 const clients = ["Small Business BC", "Almira Bardai", "The Comeback Corner", "ER Auto Works", "The Face Studio", "Huds and Lolo", "Idea Camp Communications", "Pender Auto Body"];
 const work: [string, string, string, string, number, string?][] = [
-  ["AccuQi Wellness", "Brand identity", `${BL}/accuqi-wellness-brand-mood-board.webp`, "1 1 320px", 520, "50% 30%"],
-  ["NightClerk", "Brand identity", `${BL}/accuqi-wellness-logo-variations.webp`, "1 1 320px", 520, "50% 30%"],
-  ["AccuQi Logo", "Logo design", `${BL}/accuqi-wellness-logo-design.webp`, "1 1 320px", 520, "22% 50%"],
-  ["Reception Signage", "Signage", `${BL}/accuqi-wellness-storefront-signage-window-graphics.webp`, "2 1 560px", 440],
-  ["Tote & Mug", "Collateral", `${BL}/accuqi-wellness-branded-merchandise.webp`, "1 1 320px", 440],
-  ["Yingting Smart", "Website", `${SB}/yingting-smart/a-cloudflare_worker-full.jpg`, "2 1 560px", 420, "50% 0%"],
-  ["Spa Linens", "Branding", `${BL}/accuqi-wellness-staff-apparel.webp`, "1 1 320px", 420],
+  ["AccuQi Wellness", "Brand identity", "/images/accuqi-collage.jpg", "1 1 320px", 520, "50% 30%"],
+  ["NightClerk", "Brand identity", "/images/nightclerk-collage.jpg", "1 1 320px", 520, "50% 30%"],
+  ["AccuQi Logo", "Logo design", "/images/accuqi-logo.jpg", "1 1 320px", 520, "22% 50%"],
+  ["Reception Signage", "Signage", "/images/accuqi-reception.jpg", "2 1 560px", 440],
+  ["Tote & Mug", "Collateral", "/images/accuqi-tote-mug.jpg", "1 1 320px", 440],
+  ["Yingting Smart", "Website", "/images/yingting-website.jpg", "2 1 560px", 420, "50% 0%"],
+  ["Spa Linens", "Branding", "/images/accuqi-towels.jpg", "1 1 320px", 420],
 ];
 const services: [string, string, boolean][] = [
   ["Growth Strategy", "Holistic marketing plans, goal setting, benchmarking and go-to-market strategy.", false],
@@ -124,8 +122,8 @@ function Index() {
               </div>
             </div>
             <div className="relative flex-1 basis-[420px] max-w-[620px] pb-[90px] pl-[40px] sm:pl-[70px]">
-              <BrowserFrame src={`${SB}/tsai-orthodontics/live-cloudflare_worker-full.jpg`} alt="Tsai Orthodontics website design" />
-              <div className="arch"><img src={`${BL}/accuqi-wellness-business-card-design.webp`} alt="AccuQi Wellness business cards" className="ph w-full h-full object-cover" style={{ objectPosition: "66% 30%" }} /></div>
+              <BrowserFrame src="/images/tsai-website.jpg" alt="Tsai Orthodontics website design" />
+              <div className="arch"><img src="/images/accuqi-business-cards.jpg" alt="AccuQi Wellness business cards" className="ph w-full h-full object-cover" style={{ objectPosition: "66% 30%" }} /></div>
               <p className="absolute right-0 bottom-4 flex items-center gap-2 it text-[16px] text-foreground"><Star size={18} />Brand identity & website design</p>
             </div>
           </div>
@@ -189,7 +187,7 @@ function Index() {
         <section id="digital" className="sec alt">
           <div className="wrap flex flex-wrap gap-16 items-center">
             <div className="flex-1 basis-[380px] min-w-0 relative p-[18px] border" style={{ borderColor: "oklch(0.83 0.03 330)" }}>
-              <img src={`${BL}/accuqi-wellness-brand-guidelines-cover.webp`} alt="AccuQi Wellness brand guidelines" loading="lazy" className="wk w-full object-cover" style={{ height: "clamp(420px,42vw,620px)" }} />
+              <img src="/images/accuqi-website-laptop.jpg" alt="AccuQi Wellness website on a laptop" loading="lazy" className="wk w-full object-cover" style={{ height: "clamp(420px,42vw,620px)" }} />
               <span className="absolute left-0 bottom-8 bg-background px-5 py-3 it text-[16px] text-foreground">fig. 02 — AccuQi Wellness, website</span>
             </div>
             <div className="flex-1 basis-[380px] min-w-0">
@@ -246,7 +244,6 @@ function Index() {
           <Logo color="var(--dark-foreground)" flowerColor="var(--lav)" style={{ height: 64, width: "auto" }} />
           <div className="text-[12px] text-right" style={{ color: "oklch(0.77 0.02 50)" }}>
             <p>© 2026 The Flower Girl · Vancouver, BC</p>
-            <p className="mt-1">Website by <a href="https://bluluma.com" target="_blank" rel="noopener" className="underline">Bluluma Design</a></p>
           </div>
         </div>
       </footer>

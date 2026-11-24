@@ -85,6 +85,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "The Flower Girl" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://theflowergirl.ca/images/og.jpg" },
+    ],
+    scripts: [
+      { children: "if(/(workers\\.dev|lovable\\.app|netlify\\.app)$/.test(location.hostname)){var m=document.createElement('meta');m.name='robots';m.content='noindex, nofollow';document.head.appendChild(m);}" },
     ],
     links: [
       {
