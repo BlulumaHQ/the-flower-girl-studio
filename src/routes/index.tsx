@@ -15,18 +15,18 @@ function Index() {
   const featured = brandWork.slice(0, 3);
   return (
     <Page>
-      <section className="sec">
-        <div className="wrap flex flex-wrap items-center gap-16 justify-between">
+      <section className="pt-10 pb-16 md:pt-14 md:pb-20">
+        <div className="wrap flex flex-wrap items-center gap-12 justify-between">
           <div className="flex-1 basis-[420px] min-w-0">
             <p className="eyebrow"><Star />Boutique studio · Vancouver</p>
-            <h1 className="h1 mt-8" style={{ fontSize: "clamp(54px,7.2vw,108px)" }}>Brands that bloom, <span className="it">beautifully.</span></h1>
-            <p className="mt-8 text-[18px] leading-[1.75] text-muted-foreground max-w-[450px]">Strategy, design and now digital — logos, social media, websites, SEO and AI automation, crafted with care by one boutique studio that knows your story.</p>
-            <div className="mt-10 flex flex-wrap items-center gap-8">
+            <h1 className="h1 mt-6" style={{ fontSize: "clamp(48px,6vw,92px)" }}>Brands that bloom, <span className="it">beautifully.</span></h1>
+            <p className="mt-6 text-[18px] leading-[1.7] text-muted-foreground max-w-[450px]">Strategy, design and now digital — logos, social media, websites, SEO and AI automation, crafted with care by one boutique studio that knows your story.</p>
+            <div className="mt-8 flex flex-wrap items-center gap-8">
               <Link to="/contact" className="pill pill-d">Free consultation</Link>
               <Link to="/services" className="ulink">Explore services</Link>
             </div>
           </div>
-          <div className="relative flex-1 basis-[420px] max-w-[620px] pb-[90px] pl-[40px] sm:pl-[70px]">
+          <div className="relative flex-1 basis-[420px] max-w-[560px] pb-[70px] pl-[40px] sm:pl-[64px]">
             <BrowserFrame src="/images/tsai-website.jpg" alt="Tsai Orthodontics website design" />
             <div className="arch"><img src="/images/accuqi-business-cards.jpg" alt="AccuQi Wellness business cards" className="wk w-full h-full object-cover" style={{ objectPosition: "66% 30%" }} /></div>
             <p className="absolute right-0 bottom-4 flex items-center gap-2 it text-[16px] text-foreground"><Star size={18} />Brand identity & website design</p>

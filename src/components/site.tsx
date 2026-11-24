@@ -27,7 +27,7 @@ export function Logo({ color = "var(--ink)", flowerColor = "var(--lav)", style }
   });
   const t = { fontFamily: "Questrial", lengthAdjust: "spacingAndGlyphs" as const, fill: color };
   return (
-    <svg viewBox="0 0 1230 520" style={style} role="img" aria-label="The Flower Girl">
+    <svg viewBox="0 -24 1230 548" style={style} role="img" aria-label="The Flower Girl">
       <text x={170} y={85} fontSize={118} textLength={155} {...t}>the</text>
       <text x={10} y={298} fontSize={300} textLength={865} {...t}>flower</text>
       <text x={555} y={473} fontSize={210} textLength={265} {...t}>girl</text>
@@ -82,7 +82,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="border-b sticky top-0 z-40 bg-background/95 backdrop-blur">
-      <div className="wrap flex items-center justify-between gap-6 py-4">
+      <div className="wrap flex items-center justify-between gap-6 pt-6 pb-4">
         <Link to="/" aria-label="The Flower Girl home"><Logo style={{ height: "clamp(56px,6.4vw,92px)", width: "auto" }} /></Link>
         <nav className="hidden lg:flex gap-8 text-[13px] tracking-[.1em]">
           {nav.map(([n, l, h]) => (
@@ -136,11 +136,11 @@ export function Page({ children }: { children: ReactNode }) {
 
 export function PageIntro({ eyebrow, title, accent, text }: { eyebrow: string; title: string; accent: string; text?: string }) {
   return (
-    <section className="sec pb-0">
+    <section className="pt-12 md:pt-16">
       <div className="wrap">
         <p className="eyebrow"><Star />{eyebrow}</p>
-        <h1 className="h1 mt-8 max-w-[1000px]" style={{ fontSize: "clamp(48px,6.4vw,96px)" }}>{title} <span className="it">{accent}</span></h1>
-        {text && <p className="mt-8 text-[18px] leading-[1.75] text-muted-foreground max-w-[620px]">{text}</p>}
+        <h1 className="h1 mt-6 max-w-[1000px]" style={{ fontSize: "clamp(44px,5.6vw,84px)" }}>{title} <span className="it">{accent}</span></h1>
+        {text && <p className="mt-6 text-[18px] leading-[1.75] text-muted-foreground max-w-[620px]">{text}</p>}
       </div>
     </section>
   );
