@@ -38,7 +38,7 @@ export const work: Piece[] = [
 ];
 
 /** Homepage feature, in order. */
-export const featured: Piece[] = ["lets-play-hockey-ravens", "hudslolo-summer-lookbook", "cnv-open-streets-infographic"].map((k) => work.find((w) => w.src.includes(k))!);
+export const featured: Piece[] = ["bc-digital-trust-brand-overview", "hudslolo-summer-lookbook", "cnv-open-streets-infographic"].map((k) => work.find((w) => w.src.includes(k))!);
 
 export const categories: Category[] = ["Municipal", "Provincial", "Corporate & Community"];
 
