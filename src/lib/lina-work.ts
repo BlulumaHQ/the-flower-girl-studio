@@ -23,6 +23,7 @@ export const work: Piece[] = [
   p("City of North Vancouver", "What We Heard report", "Municipal", "cnv-wwhr-climate-and-environment-ph2-page-01-e3804f.png"),
   p("Urban Forest Plan", "Policy document", "Municipal", "urban-forest-plan-2025-page-20-63af14.png"),
   p("Executive Summary", "Report design", "Provincial", "emdt-executive-summary-report-final-page-02-d563a1.png"),
+  p("Ravens", "Let's Play Hockey", "Corporate & Community", "lets-play-hockey-ravens-43ceba.png"),
   p("Ravens", "Sponsorship package", "Corporate & Community", "ravens-sponsorship-package-2026-218915.webp"),
   p("The Shipyards", "Summer event ad", "Municipal", "cnv-shipyards-1-4-page-ad-4854x5-final-c9430d.png"),
   p("City of North Vancouver", "Budget in brief", "Municipal", "cnv-info-sheet-draft-2025-budget-in-brief-icc-december6-page-1-8c2ffa.png"),
@@ -35,6 +36,9 @@ export const work: Piece[] = [
   p("Rumble", "Event invitation", "Corporate & Community", "rumble-invitation-may-30-3caa46.png"),
   p("Women's Health Event", "Event poster", "Corporate & Community", "menopause-event-ii-9d8fcc.webp"),
 ];
+
+/** Homepage feature, in order. */
+export const featured: Piece[] = ["lets-play-hockey-ravens", "hudslolo-summer-lookbook", "cnv-open-streets-infographic"].map((k) => work.find((w) => w.src.includes(k))!);
 
 export const categories: Category[] = ["Municipal", "Provincial", "Corporate & Community"];
 

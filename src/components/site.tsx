@@ -1,4 +1,4 @@
-import { work, sites } from "../lib/lina-work";
+import { featured, sites } from "../lib/lina-work";
 import { Link } from "@tanstack/react-router";
 import { useState, type CSSProperties, type ReactNode } from "react";
 
@@ -183,5 +183,5 @@ export const steps = [
 ];
 
 export type Brand = { t: string; tag: string; src: string; flex: string; h: number; pos?: string | undefined };
-export const brandWork: Brand[] = work.map((w) => ({ t: w.t, tag: w.tag, src: w.src, flex: "1 1 280px", h: 520, pos: w.pos }));
+export const brandWork: Brand[] = featured.map((w) => ({ t: w.t, tag: w.tag, src: w.src, flex: "1 1 280px", h: 520, pos: w.pos }));
 export const websites: { t: string; tag: string; src: string }[] = sites;
