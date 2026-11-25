@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { img } from "../lib/lina-work";
 import { Page, PageIntro, Star, CtaBand, pageHead, steps, clients } from "../components/site";
 
 export const Route = createFileRoute("/studio")({
@@ -21,7 +20,7 @@ function Studio() {
       <section className="sec">
         <div className="wrap flex flex-wrap gap-16 items-center">
           <div className="flex-1 basis-[380px] min-w-0 relative pb-10 pl-8">
-            <img src={img("hudslolo-summer-lookbook-2022-page-1-9b61f5.png")} alt="Huds and Lolo summer lookbook by The Flower Girl" className="wk w-full object-cover" style={{ height: "clamp(440px,46vw,640px)", borderRadius: "320px 320px 0 0", objectPosition: "50% 20%" }} />
+            <img src="/images/flowers-dried.jpg" alt="Dried flowers in The Flower Girl studio" className="ph w-full object-cover" style={{ height: "clamp(440px,46vw,640px)", borderRadius: "320px 320px 0 0", objectPosition: "50% 20%" }} />
             <div className="absolute left-0 bottom-0 bg-background px-5 py-3 it text-[16px] flex items-center gap-2"><Star size={18} />fig. 01 — brand identity</div>
           </div>
           <div className="flex-1 basis-[380px] min-w-0">

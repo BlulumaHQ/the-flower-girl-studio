@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Page, Star, BrowserFrame, CtaBand, pageHead, clients, services, steps, brandWork, websites } from "../components/site";
+import { Page, Star, CtaBand, pageHead, clients, services, steps, brandWork, websites } from "../components/site";
 import { img } from "../lib/lina-work";
 
 export const Route = createFileRoute("/")({
@@ -28,8 +28,8 @@ function Index() {
             </div>
           </div>
           <div className="relative flex-1 basis-[420px] max-w-[560px] pb-[70px] pl-[40px] sm:pl-[64px]">
-            <BrowserFrame src={img("soulshine-sanctuary-2-32e6fd.jpg")} alt="Soulshine Sanctuary website design" />
-            <div className="arch"><img src={img("tqb-financial-plan-2025-template-page-1-f3aded.png")} alt="Town of Qualicum Beach financial plan cover" className="wk w-full h-full object-cover" style={{ objectPosition: "50% 20%" }} /></div>
+            <img src={img("soulshine-sanctuary-2-32e6fd.jpg")} alt="Soulshine Sanctuary website design" className="wk block w-full h-auto" style={{ boxShadow: "0 24px 60px -30px rgba(60,30,20,.35)" }} />
+            <div className="arch"><img src="/images/flowers-roses.jpg" alt="Flowers in the studio" className="ph w-full h-full object-cover" /></div>
             <p className="absolute right-0 bottom-4 flex items-center gap-2 it text-[16px] text-foreground"><Star size={18} />Print, brand & website design</p>
           </div>
         </div>
@@ -61,7 +61,7 @@ function Index() {
           <div className="flex flex-wrap" style={{ gap: "40px 28px" }}>
             {featured.map((w) => (
               <figure key={w.t} style={{ flex: w.flex }} className="min-w-0">
-                <img src={w.src} alt={`${w.t} — ${w.tag}`} loading="lazy" className="wk w-full object-cover bg-alt" style={{ height: `min(${w.h}px, 120vw)`, objectPosition: w.pos ?? "50% 50%" }} />
+                <img src={w.src} alt={`${w.t} — ${w.tag}`} loading="lazy" className="wk w-full object-contain bg-alt" style={{ height: `min(${w.h}px, 120vw)`, padding: 16 }} />
                 <figcaption className="flex justify-between items-baseline gap-4 border-t mt-4 pt-4">
                   <span className="serif text-[25px]">{w.t}</span><span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">{w.tag}</span>
                 </figcaption>
@@ -71,7 +71,7 @@ function Index() {
           <div className="mt-16 grid gap-10" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))" }}>
             {websites.slice(0, 2).map((w) => (
               <figure key={w.t} className="min-w-0">
-                <BrowserFrame src={w.src} alt={`${w.t} website`} />
+                <img src={w.src} alt={`${w.t} website`} loading="lazy" className="wk block w-full h-auto" />
                 <figcaption className="flex justify-between items-baseline gap-4 border-t mt-4 pt-4">
                   <span className="serif text-[25px]">{w.t}</span><span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">Website</span>
                 </figcaption>
@@ -103,7 +103,7 @@ function Index() {
       <section className="sec alt">
         <div className="wrap flex flex-wrap gap-16 items-center">
           <div className="flex-1 basis-[380px] min-w-0 relative p-[18px] border" style={{ borderColor: "oklch(0.83 0.03 330)" }}>
-            <img src={img("neo-website-beabf2.png")} alt="NEO website design" loading="lazy" className="wk w-full object-cover" style={{ height: "clamp(420px,42vw,620px)" }} />
+            <img src={img("neo-website-beabf2.png")} alt="NEO website design" loading="lazy" className="wk block w-full h-auto" />
             <span className="absolute left-0 bottom-8 bg-background px-5 py-3 it text-[16px] text-foreground">fig. 02 — NEO, website</span>
           </div>
           <div className="flex-1 basis-[380px] min-w-0">

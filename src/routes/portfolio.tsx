@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Page, PageIntro, CtaBand, pageHead, BrowserFrame } from "../components/site";
+import { Page, PageIntro, CtaBand, pageHead } from "../components/site";
 import { work, sites, categories, PORTFOLIO_PDF, PORTFOLIO_URL, type Category } from "../lib/lina-work";
 
 export const Route = createFileRoute("/portfolio")({
@@ -37,7 +37,7 @@ function Portfolio() {
               <div className="grid mt-8" style={{ gap: "44px 28px", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))" }}>
                 {work.filter((w) => w.cat === cat).map((w) => (
                   <figure key={w.src} className="min-w-0">
-                    <img src={w.src} alt={`${w.t} — ${w.tag}`} loading="lazy" className="wk w-full bg-alt" style={{ aspectRatio: "4/5", objectPosition: w.pos, objectFit: w.fit, padding: w.fit === "contain" ? 16 : 0 }} />
+                    <img src={w.src} alt={`${w.t} — ${w.tag}`} loading="lazy" className="wk w-full bg-alt" style={{ aspectRatio: "4/5", objectPosition: w.pos, objectFit: "contain", padding: 16 }} />
                     <figcaption className="border-t mt-4 pt-4">
                       <span className="serif text-[22px] block leading-tight">{w.t}</span>
                       <span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">{w.tag}</span>
@@ -54,7 +54,7 @@ function Portfolio() {
               <div className="grid mt-8" style={{ gap: "56px 32px", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))" }}>
                 {sites.map((w) => (
                   <figure key={w.src} className="min-w-0">
-                    <BrowserFrame src={w.src} alt={`${w.t} ${w.tag.toLowerCase()}`} />
+                    <img src={w.src} alt={`${w.t} ${w.tag.toLowerCase()}`} loading="lazy" className="wk w-full bg-alt" style={{ aspectRatio: "16/10", objectFit: "contain", padding: 12 }} />
                     <figcaption className="flex justify-between items-baseline gap-4 border-t mt-4 pt-4">
                       <span className="serif text-[25px]">{w.t}</span><span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">{w.tag}</span>
                     </figcaption>
