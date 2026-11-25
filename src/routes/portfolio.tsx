@@ -37,7 +37,7 @@ function Portfolio() {
               <div className="grid mt-8" style={{ gap: "44px 28px", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))" }}>
                 {work.filter((w) => w.cat === cat).map((w) => (
                   <figure key={w.src} className="min-w-0">
-                    <img src={w.src} alt={`${w.t} — ${w.tag}`} loading="lazy" className="wk w-full object-cover bg-alt" style={{ aspectRatio: "4/5", objectPosition: w.pos }} />
+                    <img src={w.src} alt={`${w.t} — ${w.tag}`} loading="lazy" className="wk w-full bg-alt" style={{ aspectRatio: "4/5", objectPosition: w.pos, objectFit: w.fit, padding: w.fit === "contain" ? 16 : 0 }} />
                     <figcaption className="border-t mt-4 pt-4">
                       <span className="serif text-[22px] block leading-tight">{w.t}</span>
                       <span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">{w.tag}</span>

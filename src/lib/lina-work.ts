@@ -7,9 +7,9 @@ export const PORTFOLIO_URL = "https://linama.portfoliobox.net/";
 export const PORTFOLIO_PDF: string | null = null;
 
 export type Category = "Municipal" | "Provincial" | "Corporate & Community";
-export type Piece = { t: string; tag: string; cat: Category; src: string; pos: string };
+export type Piece = { t: string; tag: string; cat: Category; src: string; pos: string; fit: "cover" | "contain" };
 
-const p = (t: string, tag: string, cat: Category, file: string, pos = "50% 0%"): Piece => ({ t, tag, cat, src: CDN + file, pos });
+const p = (t: string, tag: string, cat: Category, file: string, pos = "50% 0%"): Piece => ({ t, tag, cat, src: CDN + file, pos, fit: pos === "50% 50%" ? "contain" : "cover" });
 
 export const work: Piece[] = [
   p("Town of Qualicum Beach", "Financial plan", "Municipal", "tqb-financial-plan-2025-template-page-1-f3aded.png"),
