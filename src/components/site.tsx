@@ -1,3 +1,4 @@
+import { work, sites } from "../lib/lina-work";
 import { Link } from "@tanstack/react-router";
 import { useState, type CSSProperties, type ReactNode } from "react";
 
@@ -181,26 +182,6 @@ export const steps = [
   ["04", "Grow", "SEO, automation and reporting keep results coming."],
 ];
 
-export type Brand = { t: string; tag: string; src: string; flex: string; h: number; pos?: string };
-export const brandWork: Brand[] = [
-  { t: "AccuQi Wellness", tag: "Brand identity", src: "/images/accuqi-collage.jpg", flex: "1 1 320px", h: 520, pos: "50% 30%" },
-  { t: "NightClerk", tag: "Brand identity", src: "/images/nightclerk-collage.jpg", flex: "1 1 320px", h: 520, pos: "50% 30%" },
-  { t: "AccuQi Logo", tag: "Logo design", src: "/images/accuqi-logo.jpg", flex: "1 1 320px", h: 520, pos: "22% 50%" },
-  { t: "Reception Signage", tag: "Signage", src: "/images/accuqi-reception.jpg", flex: "2 1 560px", h: 440 },
-  { t: "Tote & Mug", tag: "Collateral", src: "/images/accuqi-tote-mug.jpg", flex: "1 1 320px", h: 440 },
-  { t: "Business Cards", tag: "Print", src: "/images/accuqi-business-cards.jpg", flex: "1 1 320px", h: 420 },
-  { t: "AccuQi Website", tag: "Website", src: "/images/accuqi-website-laptop.jpg", flex: "2 1 560px", h: 420 },
-  { t: "Spa Linens", tag: "Branding", src: "/images/accuqi-towels.jpg", flex: "1 1 320px", h: 420 },
-];
-
-const S = "https://uzdjwpkgldzhnoxjeyrw.supabase.co/storage/v1/object/public/content-images/b237218e-d944-4af0-87b2-09379102e53e/portfolio/";
-export const websites: { t: string; tag: string; src: string }[] = [
-  { t: "Yingting Smart", tag: "Smart home · Bilingual", src: S + "yingting-smart/a-cloudflare_worker-full.jpg" },
-  { t: "Tsai Orthodontics", tag: "Healthcare", src: S + "tsai-orthodontics/live-cloudflare_worker-full.jpg" },
-  { t: "TTOP Chicken", tag: "Restaurant · Trilingual", src: S + "ttop-vancouver/live-cloudflare_worker-full.jpg" },
-  { t: "Joyce Wu Dental", tag: "Healthcare", src: S + "joyce-wu-dental/a-cloudflare_worker-full.jpg" },
-  { t: "MH Group", tag: "Real estate", src: S + "mh-group/a-cloudflare_worker-full.jpg" },
-  { t: "Oceanicflo", tag: "Architecture", src: S + "oceanicflo/a-cloudflare_worker-full.jpg" },
-  { t: "Wild West Wags", tag: "Dog training", src: S + "wild-west-wags/live-cloudflare_worker-full.jpg" },
-  { t: "Shooting Star Travel", tag: "Travel · Trilingual", src: S + "shootingstar-travel/live-cloudflare_worker-full.jpg" },
-];
+export type Brand = { t: string; tag: string; src: string; flex: string; h: number; pos?: string | undefined };
+export const brandWork: Brand[] = work.map((w) => ({ t: w.t, tag: w.tag, src: w.src, flex: "1 1 280px", h: 520, pos: w.pos }));
+export const websites: { t: string; tag: string; src: string }[] = sites;

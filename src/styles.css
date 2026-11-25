@@ -13,7 +13,7 @@
   --color-dark: var(--dark);
   --color-dark-foreground: var(--dark-foreground);
   --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Jost", system-ui, sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
 }
 :root {
   --background: oklch(0.982 0.007 75);

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { img } from "../lib/lina-work";
 import { Page, PageIntro, Star, CtaBand, pageHead, services } from "../components/site";
 
 export const Route = createFileRoute("/services")({
@@ -43,7 +44,7 @@ function Services() {
               <p className="mt-8 text-[17px] leading-[1.8] text-muted-foreground">The same eye for design, now on your website, in search results and behind the scenes.</p>
             </div>
             <div className="flex-1 basis-[380px] min-w-0 p-[18px] border" style={{ borderColor: "oklch(0.83 0.03 330)" }}>
-              <img src="/images/accuqi-website-laptop.jpg" alt="AccuQi Wellness website on a laptop" className="wk w-full object-cover" style={{ height: "clamp(320px,32vw,460px)" }} />
+              <img src={img("visual-website2-d1bae4.jpg")} alt="Website design by The Flower Girl" className="wk w-full object-cover" style={{ height: "clamp(320px,32vw,460px)" }} />
             </div>
           </div>
           <div className="grid gap-5 mt-16" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))" }}>
