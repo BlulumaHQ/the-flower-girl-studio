@@ -9,7 +9,7 @@ export const Route = createFileRoute("/portfolio")({
 });
 
 type Tab = "All" | Category | "Websites";
-const tabs: Tab[] = ["All", ...categories, "Websites"];
+const tabs: Tab[] = ["All", "Websites", ...categories];
 
 function Portfolio() {
   const [tab, setTab] = useState<Tab>("All");
@@ -31,6 +31,22 @@ function Portfolio() {
             </a>
           </div>
 
+          {(tab === "All" || tab === "Websites") && (
+            <div className="mt-14">
+              <p className="eyebrow acc">Websites & e-communications</p>
+              <div className="grid mt-8" style={{ gap: "56px 32px", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))" }}>
+                {sites.map((w) => (
+                  <figure key={w.src} className="min-w-0">
+                    <img src={w.src} alt={`${w.t} ${w.tag.toLowerCase()}`} loading="lazy" className="wk w-full bg-alt" style={{ aspectRatio: "16/10", objectFit: "contain", padding: 12 }} />
+                    <figcaption className="flex justify-between items-baseline gap-4 border-t mt-4 pt-4">
+                      <span className="serif text-[25px]">{w.t}</span><span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">{w.tag}</span>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
+
           {shown.map((cat) => (
             <div key={cat} className="mt-14">
               <p className="eyebrow acc">{cat} projects</p>
@@ -47,22 +63,6 @@ function Portfolio() {
               </div>
             </div>
           ))}
-
-          {(tab === "All" || tab === "Websites") && (
-            <div className="mt-20">
-              <p className="eyebrow acc">Websites & e-communications</p>
-              <div className="grid mt-8" style={{ gap: "56px 32px", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))" }}>
-                {sites.map((w) => (
-                  <figure key={w.src} className="min-w-0">
-                    <img src={w.src} alt={`${w.t} ${w.tag.toLowerCase()}`} loading="lazy" className="wk w-full bg-alt" style={{ aspectRatio: "16/10", objectFit: "contain", padding: 12 }} />
-                    <figcaption className="flex justify-between items-baseline gap-4 border-t mt-4 pt-4">
-                      <span className="serif text-[25px]">{w.t}</span><span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">{w.tag}</span>
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
-            </div>
-          )}
 
           <div className="mt-24 border-t pt-12 flex flex-wrap items-end justify-between gap-8">
             <div className="max-w-[560px]">

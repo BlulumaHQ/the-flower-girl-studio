@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Page, Star, CtaBand, pageHead, clients, services, steps, brandWork, websites } from "../components/site";
+import { Page, Star, CtaBand, pageHead, clients, services, steps, websites } from "../components/site";
 import { img } from "../lib/lina-work";
 
 export const Route = createFileRoute("/")({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const featured = brandWork.slice(0, 3);
+  const homeSites = ["soulshine", "neo-website", "visual-website2", "facestudio-dbd9ee"].map((k) => websites.find((w) => w.src.includes(k))!);
   return (
     <Page>
       <section className="pt-10 pb-16 md:pt-14 md:pb-20">
@@ -55,23 +55,13 @@ function Index() {
       <section className="sec">
         <div className="wrap">
           <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
-            <div><p className="eyebrow acc">Selected work</p><h2 className="h2 mt-5" style={{ fontSize: "clamp(42px,5vw,70px)" }}>Brands we've <span className="it">brought to life.</span></h2></div>
+            <div><p className="eyebrow acc">Selected work</p><h2 className="h2 mt-5" style={{ fontSize: "clamp(42px,5vw,70px)" }}>Websites we've <span className="it">brought to life.</span></h2></div>
             <Link to="/portfolio" className="ulink">View the portfolio →</Link>
           </div>
-          <div className="flex flex-wrap" style={{ gap: "40px 28px" }}>
-            {featured.map((w) => (
-              <figure key={w.t} style={{ flex: w.flex }} className="min-w-0">
-                <img src={w.src} alt={`${w.t} — ${w.tag}`} loading="lazy" className="wk w-full object-contain bg-alt" style={{ height: `min(${w.h}px, 120vw)`, padding: 16 }} />
-                <figcaption className="flex justify-between items-baseline gap-4 border-t mt-4 pt-4">
-                  <span className="serif text-[25px]">{w.t}</span><span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">{w.tag}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-          <div className="mt-16 grid gap-10" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))" }}>
-            {websites.slice(0, 2).map((w) => (
-              <figure key={w.t} className="min-w-0">
-                <img src={w.src} alt={`${w.t} website`} loading="lazy" className="wk block w-full h-auto" />
+          <div className="grid" style={{ gap: "56px 32px", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,460px),1fr))" }}>
+            {homeSites.map((w) => (
+              <figure key={w.src} className="min-w-0">
+                <img src={w.src} alt={`${w.t} website`} loading="lazy" className="wk w-full bg-alt" style={{ aspectRatio: "16/10", objectFit: "contain", padding: 12 }} />
                 <figcaption className="flex justify-between items-baseline gap-4 border-t mt-4 pt-4">
                   <span className="serif text-[25px]">{w.t}</span><span className="text-[10px] uppercase tracking-[.26em] text-muted-foreground">Website</span>
                 </figcaption>
